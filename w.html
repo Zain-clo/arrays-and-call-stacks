@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz App</title>
+</head>
+<body>
+  <h1>Take our Quiz</h1>
+  <form id="quizForm">
+    <!-- Add quiz questions here -->
+
+    <p>1. What is 4 X 4</p>
+   <input type="radio" name="i" id="">34
+   <input type="radio" name="i" id="">16
+
+
+    <button type="submit">Submit Quiz</button>
+  </form>
+  <div id="results"></div>
+  <script>
+    const quizForm = document.getElementById('quizForm');
+const resultsDiv = document.getElementById('results');
+
+quizForm.addEventListener('submit', (event) => {
+  event.preventDefault(); 
+  quizForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  // 1. Get user answers from the form
+  const userAnswers = {};
+  // Example: Assuming radio buttons for answers
+  const answerInputs = quizForm.querySelectorAll('input[type="radio"]:checked');
+  answerInputs.forEach(input => {
+    userAnswers[input.name] = input.value;
+  });
+  // 2. Calculate the score
+  let score = 0;
+  const correctAnswers = {
+    1: '16',
+    question2: 'answer2',
+    // ... add correct answers for all questions
+  };
+  for (const question in correctAnswers) {
+    if (userAnswers[question] === correctAnswers[question]) {
+      score++;
+    }
+  }
+  // 3. Display the score in resultsDiv
+  resultsDiv.innerHTML = `Your score: ${score}`;
+  const score = 10; // Replace with actual calculation
+  resultsDiv.innerHTML = `Your score: ${score}`;
+
+  </script>
+
+  
+</body>
+</html>
